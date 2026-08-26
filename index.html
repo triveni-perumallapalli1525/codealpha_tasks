@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>My Image Gallery</h1>
+        <p>Explore beautiful moments ✨</p>
+    </header>
+
+    <div class="filters">
+        <button onclick="filterImages('all')">All</button>
+        <button onclick="filterImages('nature')">Nature</button>
+        <button onclick="filterImages('travel')">Travel</button>
+        <button onclick="filterImages('animals')">Animals</button>
+    </div>
+
+    <main class="gallery">
+
+        <div class="gallery-item nature">
+            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7"
+                 alt="Nature" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item travel">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+                 alt="Travel" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item animals">
+            <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d"
+                 alt="Animal" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item nature">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e"
+                 alt="Mountain" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item travel">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+                 alt="Travel" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item animals">
+            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d"
+                 alt="Dog" onclick="openLightbox(this)">
+        </div>
+
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+
+        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+
+        <img id="lightbox-img" src="" alt="Preview">
+
+        <button class="next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <footer>
+        <p>© 2026 Triveni Perumalapalli | CodeAlpha Internship</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
