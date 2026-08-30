@@ -1,75 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeAlpha Image Gallery</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calcura — Smart Calculator | CodeAlpha Task 2</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>My Image Gallery</h1>
-        <p>Explore beautiful moments ✨</p>
-    </header>
+<header class="marquee-header">
 
-    <div class="filters">
-        <button onclick="filterImages('all')">All</button>
-        <button onclick="filterImages('nature')">Nature</button>
-        <button onclick="filterImages('travel')">Travel</button>
-        <button onclick="filterImages('animals')">Animals</button>
+    <div class="marquee-track">
+
+        <div class="marquee-group">
+            <img src="https://picsum.photos/seed/calc1/300/200" alt="">
+            <img src="https://picsum.photos/seed/calc2/300/200" alt="">
+            <img src="https://picsum.photos/seed/calc3/300/200" alt="">
+            <img src="https://picsum.photos/seed/calc4/300/200" alt="">
+            <img src="https://picsum.photos/seed/calc5/300/200" alt="">
+            <img src="https://picsum.photos/seed/calc6/300/200" alt="">
+        </div>
+
+        <div class="marquee-group" aria-hidden="true">
+            <img src="https://picsum.photos/seed/calc1/300/200" alt="">
+            <img src="https://picsum.photos/seed/calc2/300/200" alt="">
+            <img src="https://picsum.photos/seed/calc3/300/200" alt="">
+            <img src="https://picsum.photos/seed/calc4/300/200" alt="">
+            <img src="https://picsum.photos/seed/calc5/300/200" alt="">
+            <img src="https://picsum.photos/seed/calc6/300/200" alt="">
+        </div>
+
     </div>
 
-    <main class="gallery">
+    <div class="marquee-overlay">
 
-        <div class="gallery-item nature">
-            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7"
-                 alt="Nature" onclick="openLightbox(this)">
-        </div>
+        <p class="eyebrow">
+            CodeAlpha · Frontend Development Internship
+        </p>
 
-        <div class="gallery-item travel">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
-                 alt="Travel" onclick="openLightbox(this)">
-        </div>
+        <h1>Calc<span>ura</span></h1>
 
-        <div class="gallery-item animals">
-            <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d"
-                 alt="Animal" onclick="openLightbox(this)">
-        </div>
+        <p class="tagline">
+            A calculator with a keypad that clicks back.
+        </p>
 
-        <div class="gallery-item nature">
-            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e"
-                 alt="Mountain" onclick="openLightbox(this)">
-        </div>
-
-        <div class="gallery-item travel">
-            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e"
-                 alt="Travel" onclick="openLightbox(this)">
-        </div>
-
-        <div class="gallery-item animals">
-            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d"
-                 alt="Dog" onclick="openLightbox(this)">
-        </div>
-
-    </main>
-
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-
-        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
-
-        <img id="lightbox-img" src="" alt="Preview">
-
-        <button class="next" onclick="changeImage(1)">&#10095;</button>
     </div>
 
-    <footer>
-        <p>© 2026 Triveni Perumalapalli | CodeAlpha Internship</p>
-    </footer>
+</header>
 
-    <script src="script.js"></script>
+
+<main class="stage">
+
+    <section class="calculator" id="calculator">
+
+        <div class="screen-well">
+
+            <div class="expression" id="expression">
+                &nbsp;
+            </div>
+
+            <div class="result" id="result">
+                0
+            </div>
+
+        </div>
+
+
+        <div class="keypad" id="keypad">
+
+            <button class="key key-fn" data-action="clear">AC</button>
+
+            <button class="key key-fn" data-action="negate">±</button>
+
+            <button class="key key-fn" data-action="percent">%</button>
+
+            <button class="key key-op" data-op="÷">÷</button>
+
+
+            <button class="key key-num" data-num="7">7</button>
+            <button class="key key-num" data-num="8">8</button>
+            <button class="key key-num" data-num="9">9</button>
+
+            <button class="key key-op" data-op="×">×</button>
+
+
+            <button class="key key-num" data-num="4">4</button>
+            <button class="key key-num" data-num="5">5</button>
+            <button class="key key-num" data-num="6">6</button>
+
+            <button class="key key-op" data-op="−">−</button>
+
+
+            <button class="key key-num" data-num="1">1</button>
+            <button class="key key-num" data-num="2">2</button>
+            <button class="key key-num" data-num="3">3</button>
+
+            <button class="key key-op" data-op="+">+</button>
+
+
+            <button class="key key-num key-zero" data-num="0">
+                0
+            </button>
+
+            <button class="key key-num" data-action="decimal">
+                .
+            </button>
+
+            <button class="key key-eq" data-action="equals">
+                =
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <p class="hint">
+        Keyboard works too —
+        <kbd>+</kbd>
+        <kbd>-</kbd>
+        <kbd>*</kbd>
+        <kbd>/</kbd>,
+        <kbd>Enter</kbd>,
+        <kbd>Esc</kbd>
+    </p>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <p>
+        Built for CodeAlpha Frontend Development Internship —
+        Task 2: Calculator
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
